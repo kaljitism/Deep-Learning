@@ -1,12 +1,35 @@
+# A neural network is a series of matrix operations we perform over a given matrix of data. Today we are going to code a neural network from scratch, which means we 
+# have to code all those operations and run them in a specific order in loop to train the network. 
+
+# Prerequisites for this tutorial are - 
+# 1. Python - You should be well versed with Python, specially Object Oriented Programming. I will walk through all the code and logic in an algorithmic manner but I
+# assume that you have a decent Python backgorund. 
+# 2. Math - We are going to use concepts of Probability, Statistics, Calculus, and Linear Algebra. Although we dont have to perform calculations but knowing the concepts 
+# of these subjects will help you understand the concept of Neural Networks even if you are a beginner in Python. 
+# 3. Machine Learning - I am going to assume a background in Machine Learning concepts like Gradient Descent and Optimization, cuzz we are going to use some of those. 
+
+# First of all, lets import the dependencies. We will use Numpy for our mathematical calculations and Matplotlib to plot the measurements we make. 
+
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Lets create a Neural Network Class, which  will serve as a High level function to use a simple network. We will only ask the user for the data and labels of a 
+# specific shape. 
+
 class NeuralNetworks(object):
     def __init__(self, data, labels):
+        
+        # Our Neural Network will have three layers. One input layer, one hidden layer and one output layer. Input layer will have two nodes,
+        # hidden layer will have three nodes and output layer will have just one node. Which means the dataset should have two features and based on that,
+        # our model has to predict one output. 
+ 
         self.inputLayerSize = 2
         self.hiddenLayerSize = 3
         self.outputLayerSize = 1
 
+        # z1 would be the input of first layer. and corresponding labels as y1. 
+        # z2 would be the input  of second layer which we have already initialized. 
+        
         self.z1 = data
         self.y1 = labels
         self.z2 = 0
